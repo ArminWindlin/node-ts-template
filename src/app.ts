@@ -19,7 +19,7 @@ class App {
     // Setup database connection
     private database(): void {
         mongoose.connect(process.env.VCAP_SERVICES ?
-            JSON.parse(process.env.VCAP_SERVICES).mongodbent[0].credentials.uri :
+            JSON.parse(process.env.VCAP_SERVICES)["mongodb-2"][0].credentials.uri :
             'mongodb://localhost/ExampleDB');
     }
 
